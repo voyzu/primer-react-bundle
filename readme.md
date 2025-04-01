@@ -47,7 +47,11 @@ This bundle is almost exactly 1 Mb.  Babel seems to be approx 2.88 Mb. The CSS a
 
 ## Development
 
-This is a very simple webpack project.  To build the bundle clone the repo and run `webpack`, which will build to `/dist/primer-react-bundle.js`. Test your build by opening `test-internal.html` in a modern browser
+This is a very simple webpack project.  To build the bundle:
+- clone the repo
+- npm install
+- run `webpack`, which will build to `/dist/primer-react-bundle.js`. 
+- Test your build by opening `test-internal.html` in a modern browser
 
 ## Improvements
 
