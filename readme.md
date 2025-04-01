@@ -10,7 +10,7 @@ This repo bundles up Primer and React for browser use.
 
 To reference this library
 ```html
-
+  <script src="https://cdn.jsdelivr.net/gh/voyzu/primer-react-bundle@main/dist/react-primer-bundle.js"></script>
 ```
 
 The easiest way to get started is to:
