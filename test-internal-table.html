@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World Primer React</title>
+
+  <!-- include babel. This is so we can use JSX in our html page -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- reference our bundle. This is what enables us to use primer react components -->
+  <script src="./dist/react-primer-bundle.js"></script>
+
+  <!-- Although primer builds in CSS is still needs a stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css@21.5.1/dist/primer.min.css">
+
+  <style>
+    [class^="BaseStyles"] {
+      background-color: transparent;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div id="heading-div" style="width: 100%;text-align: center;"></div>
+
+  <div style="display: flex;justify-content: space-between;margin:20px;padding:20px;background-color: aliceblue;">
+
+    <div id="left-div">
+
+    </div>
+
+    <div id="middle-div">
+
+    </div>
+
+    <div id="right-div">
+
+    </div>
+
+    <div id="far-right-div">
+
+    </div>
+
+  </div>
+
+  <!-- script type must be text/babel to enable us to use JSX -->
+  <script type="text/babel" data-type="module">
+
+    const { ThemeProvider, BaseStyles, Button, FormControl, Heading, TextInput, Select, Stack, ToggleSwitch } = PrimerReact;
+    const { Table, DataTable } = PrimerReactExperimental;
+
+
+    const MyHeading = () => (
+      <ThemeProvider>
+        <BaseStyles>
+          <Heading as="h1">Four Primer React Components</Heading>
+        </BaseStyles>
+      </ThemeProvider>
+    )
+
+    const MyButton = () => (
+      <ThemeProvider>
+        <BaseStyles>
+          <Button variant="primary" onClick={handleClick}>Click me!!</Button>
+        </BaseStyles>
+      </ThemeProvider>
+    );
+
+
+    const MyInput = () => (
+      <ThemeProvider>
+        <BaseStyles>
+          <FormControl >
+            <FormControl.Label>This is an input</FormControl.Label>
+            <TextInput placeholder="Type here..." />
+          </FormControl>
+        </BaseStyles>
+      </ThemeProvider>
+    );
+
+    const Toggle = () => (
+      < ThemeProvider >
+        <BaseStyles>
+          <Stack direction="horizontal" align="center">
+            <div id="default-toggle-label">Toggle me</div>
+            <ToggleSwitch aria-labelledby="default-toggle-label" defaultChecked={true} />
+          </Stack>
+        </BaseStyles>
+      </ThemeProvider >
+    )
+
+    const DropDown = () => (
+      < ThemeProvider >
+        <BaseStyles>
+          <FormControl>
+            <FormControl.Label>Select one</FormControl.Label>
+            <Select>
+              <Select.Option value="one">Choice one</Select.Option>
+              <Select.Option value="two">Choice two</Select.Option>
+              <Select.Option value="three">Choice three</Select.Option>
+              <Select.Option value="four">Choice four</Select.Option>
+              <Select.Option value="five">Choice five</Select.Option>
+              <Select.Option value="six">Choice six</Select.Option>
+            </Select>
+          </FormControl>
+        </BaseStyles>
+      </ThemeProvider >
+    )
+
+    const headingDiv = createRoot(document.getElementById('heading-div'));
+    headingDiv.render(React.createElement(MyHeading));
+
+    // Render the button in the left div
+    const leftDiv = createRoot(document.getElementById('left-div'));
+    leftDiv.render(React.createElement(MyButton));
+
+    // Render the input in the middle div
+    const middleDiv = createRoot(document.getElementById('middle-div'));
+    middleDiv.render(React.createElement(MyInput));
+
+    // Render the togle in the right div
+    const rightDiv = createRoot(document.getElementById('right-div'));
+    rightDiv.render(React.createElement(Toggle));
+
+    const farRightDiv = createRoot(document.getElementById('far-right-div'));
+    farRightDiv.render(React.createElement(DropDown));
+
+
+    // Define the event handler function
+    const handleClick = () => {
+      alert("Look mom, no build!");
+    };
+
+
+  </script>
+</body>
+
+</html>

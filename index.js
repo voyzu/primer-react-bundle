@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import * as PrimerReact from '@primer/react';
+import * as PrimerReactExperimental from '@primer/react/experimental'
 
 // Expose React, ReactDOM, PrimerReact globally
 window.React = React;
