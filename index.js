@@ -6,6 +6,7 @@ import * as PrimerReact from '@primer/react';
 window.React = React;
 window.ReactDOM = ReactDOM;
 window.PrimerReact = PrimerReact;
+window.PrimerReactExperimental = PrimerReactExperimental;
 
-// Expose React 18 root API for usage in the browser
+// Expose React root API for usage in the browser
 window.createRoot = ReactDOM.createRoot;
